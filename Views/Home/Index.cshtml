@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Current = "Home";
+}
+
+<div class="jumbotron">
+    <h1>OneChat Api</h1>
+
+    @if (Request.IsAuthenticated)
+    {
+        @*<h4>Welcome @ViewBag.User.DisplayName!</h4>*@
+        <p class="lead">You are now authorized to use the API.</p>
+    }
+    else
+    {
+        <p class="lead">Sign in if you are granted to use the API.</p>
+        @Html.ActionLink("Click here to sign in", "SignIn", "Account", new { area = "" }, new { @class = "btn btn-primary btn-large" })
+    }
+</div>
